@@ -1,29 +1,20 @@
-# LiteLoaderBDS C++ Plugin Template
-
-The template repository for LiteLoaderBDS C++ plugin development.
-
-## Usage
-
-* Write and build your plugin
-
-  Please refer to [LiteLoaderBDS C++ Plugin Development Documentation](https://cpp.docs.litebds.com/en/) or [LiteLoaderBDS C++ 插件开发文档](https://cpp.docs.litebds.com/zh-Hans/).
-
-* Edit README.md and LICENSE
-
-  You ought not to keep the original README.md, for it contains instructions on how to build your own plugin, which might not fit your plugin repository. The README.md of your repository should contain instructions on how to build, install and use your plugin.
-
-  You don't necessarily want your repository to be open sourced under the Unlicense, so please choose your own license in place of the `LICENSE` file.
-
-## For Beta Developers
-
-If you would like to experience the latest features for plugins in beta versions of LiteLoaderBDS, you can switch the branch of the SDK to beta. Run the commands below under the plugin repository:
-
-```sh
-git submodule set-branch --branch beta SDK
-git submodule update --init --remote
+# void
+a simple void world generator
+# commands
+## voidreload
+* reload settings.json
+# settings.json
+* path ./bds root directoriy/plugins/void/
+```jsonc
+{
+  "allow_list": [],//can use regex unless use_regex is false
+  "black_list": [],//can use regex unless use_regex is false
+  "use_regex": false,
+  "enable_overworld": true,//if true , enable void world generator in overworld
+  "enable_nether": true,//if true , enable void world generator in nether
+  "enable_the_end": true,if true , enable void world generator in the_end
+  "reload_command_name": "voidreload",//the namw of voidreload command
+  "enable_debug": false,//if true , use debug mode
+  "list_type": "allow"//if value is "allow" , use allow_list . if value is "black" , use black_list
+}
 ```
-
-## License
-
-This repository is open source under the Unlicense.
-Please refer to [the license file](LICENSE) for further information.
