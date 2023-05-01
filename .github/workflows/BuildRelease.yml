@@ -22,7 +22,9 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd ./SDK/tools
-          ./PeEditor.exe -l -o ..\lib
+          ./PeEditor.exe -l
+          cp bedrock_server_api.lib ../lib
+          cp bedrock_server_var.lib ../lib
         shell: bash
 
       - name: Build
