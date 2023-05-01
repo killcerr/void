@@ -223,7 +223,7 @@ THook (void , "?decorateWorldGenPostProcess\@OverworldGeneratorMultinoise\@\@EEB
             for ( short y = -64;y < 300;y++ )
                 for ( char z = 0;z < 16;z++ )
                 {
-                    if ( !match (chunk->getBlock ({ x,y,z }).getTypeName ( )) )
+                    if ( !match (chunk->getBlock ({ x,y,z }).getName ( )) )
                     {
                         chunk->setBlockSimple (ChunkBlockPos { x, y ,z } , *Block::create ("minecraft:air" , 0));
                     }
@@ -242,7 +242,7 @@ THook (void , "?decorateWorldGenPostProcess\@NetherGenerator\@\@MEBAXAEAVBiome\@
             for ( short y = 0;y < 128;y++ )
                 for ( char z = 0;z < 16;z++ )
                 {
-                    if ( !match (chunk->getBlock ({ x,y,z }).getTypeName ( )) )
+                    if ( !match (chunk->getBlock ({ x,y,z }).getName ( )) )
                     {
                         chunk->setBlockSimple (ChunkBlockPos { x, y ,z } , *Block::create ("minecraft:air" , 0));
                     }
@@ -261,7 +261,7 @@ THook (void , "?decorateWorldGenPostProcess\@TheEndGenerator\@\@MEBAXAEAVBiome\@
             for ( short y = 0;y < 128;y++ )
                 for ( char z = 0;z < 16;z++ )
                 {
-                    if ( !match (chunk->getBlock ({ x,y,z }).getTypeName ( )) )
+                    if ( !match (chunk->getBlock ({ x,y,z }).getName ( )) )
                     {
                         chunk->setBlockSimple (ChunkBlockPos { x, y ,z } , *Block::create ("minecraft:air" , 0));
                     }
