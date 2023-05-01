@@ -13,9 +13,7 @@ jobs:
       - name: Download Server
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
-          mkdir ./SDK/tools/server
-          curl -L -o ./SDK/tools/server/server.zip https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.72.01.zip
-          cd ./SDK/tools/server/
+          curl -L -o ./SDK/tools/server.zip https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.72.01.zip
           unzip server.zip
         shell: bash
 
@@ -23,7 +21,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd ./SDK/tools
-          ./PeEditor.exe -l --pdb .\server\bedrock_server.pdb -o ..\lib
+          ./PeEditor.exe -l -o ..\lib
         shell: bash
 
       - name: Build
