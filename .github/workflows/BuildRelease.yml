@@ -14,6 +14,7 @@ jobs:
         working-directory: ${{ env.GITHUB_WORKSPACE }}
         run: |
           curl -L -o ./SDK/tools/server.zip https://minecraft.azureedge.net/bin-win/bedrock-server-1.19.72.01.zip
+          cd ./SDK/tools
           unzip server.zip
         shell: bash
 
