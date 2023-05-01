@@ -23,7 +23,7 @@ jobs:
         working-directory: ${{env.GITHUB_WORKSPACE}}
         run: |
           cd ./SDK/tools
-          ./PeEditor.exe -l -o ..\Lib --exe .\server\bedrock_server.exe --pdb .\server\bedrock_server.pdb
+          PeEditor.exe -l --pdb .\server\bedrock_server.pdb -o ..\lib
         shell: bash
 
       - name: Build
