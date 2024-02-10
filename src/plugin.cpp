@@ -195,14 +195,11 @@ void PluginInit ( )
         });
 }
 #define ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
-class OverworldGeneratorMultinoise;
-struct OverworldGeneratorMultinoise::BlockGenerationResult;
-#include <llapi/mc/OverworldGeneratorMultinoise.hpp>
-#include <llapi/mc/WorldGenerator.hpp>
+// #include <llapi/mc/WorldGenerator.hpp>
 #define ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
-#include <llapi/mc/NetherGenerator.hpp>
+// #include <llapi/mc/NetherGenerator.hpp>
 #define ENABLE_VIRTUAL_FAKESYMBOL_THEENDGENERATOR
-#include <llapi/mc/TheEndGenerator.hpp>
+// #include <llapi/mc/TheEndGenerator.hpp>
 #include <llapi/mc/BlockSource.hpp>
 #include <llapi/mc/Biome.hpp>
 #include <llapi/mc/LevelChunk.hpp>
@@ -215,7 +212,7 @@ struct OverworldGeneratorMultinoise::BlockGenerationResult;
 #include <unordered_map>
 #include <chrono>
 
-THook (void , "?decorateWorldGenPostProcess\@OverworldGeneratorMultinoise\@\@EEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z" , OverworldGeneratorMultinoise *_this , class Biome *biome , class LevelChunk *chunk , class BlockSource *bs , class Random *random)
+THook (void , "?decorateWorldGenPostProcess\@OverworldGeneratorMultinoise\@\@EEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z" , void *_this , class Biome *biome , class LevelChunk *chunk , class BlockSource *bs , class Random *random)
 {
     auto st = std::time (nullptr);
     if ( !settings.enableOverworld )
@@ -234,7 +231,7 @@ THook (void , "?decorateWorldGenPostProcess\@OverworldGeneratorMultinoise\@\@EEB
     logger.debug ("load chunk time:{}s,at(x:{},z:{},dim:{})" , et - st , chunk->getPosition ( ).x , chunk->getPosition ( ).z , "overworld");
 }
 
-THook (void , "?decorateWorldGenPostProcess\@NetherGenerator\@\@MEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z" , NetherGenerator *_this , class Biome *biome , class LevelChunk *chunk , class BlockSource *bs , class Random *random)
+THook (void , "?decorateWorldGenPostProcess\@NetherGenerator\@\@MEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z" , void *_this , class Biome *biome , class LevelChunk *chunk , class BlockSource *bs , class Random *random)
 {
     auto st = std::time (nullptr);
     if ( !settings.enableNether )
@@ -253,7 +250,7 @@ THook (void , "?decorateWorldGenPostProcess\@NetherGenerator\@\@MEBAXAEAVBiome\@
     logger.debug ("load chunk time:{}s,at(x:{},z:{},dim:{})" , et - st , chunk->getPosition ( ).x , chunk->getPosition ( ).z , "nether");
 }
 
-THook (void , "?decorateWorldGenPostProcess\@TheEndGenerator\@\@MEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z" , TheEndGenerator *_this , class Biome *biome , class LevelChunk *chunk , class BlockSource *bs , class Random *random)
+THook (void , "?decorateWorldGenPostProcess\@TheEndGenerator\@\@MEBAXAEAVBiome\@\@AEAVLevelChunk\@\@AEAVBlockSource\@\@AEAVRandom\@\@\@Z" , void *_this , class Biome *biome , class LevelChunk *chunk , class BlockSource *bs , class Random *random)
 {
     auto st = std::time (nullptr);
     if ( !settings.enableTheEnd )
