@@ -195,6 +195,7 @@ void PluginInit ( )
         });
 }
 #define ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
+struct OverworldGeneratorMultinoise::BlockGenerationResult;
 #include <llapi/mc/OverworldGeneratorMultinoise.hpp>
 #include <llapi/mc/WorldGenerator.hpp>
 #define ENABLE_VIRTUAL_FAKESYMBOL_NETHERGENERATOR
