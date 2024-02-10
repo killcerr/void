@@ -195,6 +195,7 @@ void PluginInit ( )
         });
 }
 #define ENABLE_VIRTUAL_FAKESYMBOL_OVERWORLDGENERATORMULTINOISE
+class OverworldGeneratorMultinoise;
 struct OverworldGeneratorMultinoise::BlockGenerationResult;
 #include <llapi/mc/OverworldGeneratorMultinoise.hpp>
 #include <llapi/mc/WorldGenerator.hpp>
